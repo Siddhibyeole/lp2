@@ -1,0 +1,19 @@
+from tkinter import *
+root = Tk()
+root.title("Chatbot")
+
+def send():
+    input = "You: "+e.get()
+    txt.insert(END,input)
+    user = e.get().lower()
+    if(user == "hi"):
+        txt.insert(END,"\n BOT : Hello")
+    e.delete(0,END)
+
+txt = Text(root)
+txt.grid(row=0, column=0, columnspan=2)
+e = Entry(root,width=100)
+e.grid(row=1,column=0)
+btn = Button(root,text="Send",command=send).grid(row=1,column=1)
+root.mainloop()
+
